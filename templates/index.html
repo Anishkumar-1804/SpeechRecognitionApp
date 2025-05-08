@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speech to Text Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+        }
+        .recording {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        #output {
+            margin-top: 20px;
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 50px;
+            white-space: pre-wrap;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        input[type="file"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Speech to Text Converter</h1>
+    <div class="container">
+        <button id="startBtn" class="btn"><i class="fas fa-microphone"></i> Start Recording</button>
+        <button id="stopBtn" class="btn" disabled><i class="fas fa-stop"></i> Stop Recording</button>
+        <p id="recordingIndicator" class="recording" style="display:none;">🎙️ Recording...</p>
+
+        <hr>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label>Select audio file (mp3 or wav):</label><br>
+            <input type="file" name="file" accept=".mp3, .wav" required>
+            <br><button type="submit" class="btn">Upload & Transcribe</button>
+        </form>
+
+        <hr>
+
+        <h3>Transcription:</h3>
+        <div id="output">{{ output_text if output_text else "" }}</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

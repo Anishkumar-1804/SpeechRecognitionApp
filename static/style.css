@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 40px 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main {
+    padding: 20px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+#startBtn {
+    background-color: #4CAF50;
+}
+
+#startBtn:active {
+    background-color: #388E3C;
+}
+
+.indicator {
+    color: #f44336;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.upload-section {
+    margin-top: 30px;
+}
+
+.file-input {
+    padding: 10px;
+    margin-right: 20px;
+}
+
+#outputSection {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#outputText {
+    font-size: 18px;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .btn {
+        width: 100%;
+    }
+}
